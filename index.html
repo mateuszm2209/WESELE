@@ -2,7 +2,9 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <meta name="theme-color" content="#f8f1eb">
 
     <title>Nasze Wesele ❤️</title>
 
@@ -13,77 +15,132 @@
             padding: 0;
         }
 
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+        }
+
         body {
             min-height: 100vh;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #fff7f0, #fce4ec);
+            min-height: 100dvh;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+
+            background:
+                radial-gradient(circle at top, #fffdfb 0%, #f8f1eb 45%, #eee3da 100%);
+
+            color: #3c3430;
+
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #333;
+
+            padding: 25px;
         }
 
-        .container {
-            width: 90%;
-            max-width: 500px;
+        .page {
+            width: 100%;
+            max-width: 480px;
             text-align: center;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 45px 25px;
-            border-radius: 25px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
         }
 
         .heart {
-            font-size: 55px;
-            margin-bottom: 20px;
+            font-size: 58px;
+            margin-bottom: 22px;
+
+            animation: pulse 2s infinite;
         }
 
         h1 {
-            font-size: 32px;
-            margin-bottom: 10px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(36px, 10vw, 52px);
+            font-weight: 500;
+            line-height: 1.05;
+            margin-bottom: 15px;
         }
 
         .subtitle {
             font-size: 17px;
-            color: #777;
-            margin-bottom: 35px;
-            line-height: 1.5;
+            line-height: 1.55;
+            color: #766b65;
+            margin-bottom: 38px;
         }
 
         .button {
-            display: block;
             width: 100%;
-            padding: 16px;
-            margin-top: 15px;
-            border-radius: 14px;
+            min-height: 62px;
+
             border: none;
+            border-radius: 18px;
+
             font-size: 17px;
-            font-weight: bold;
+            font-weight: 600;
+
+            margin-bottom: 15px;
+
             cursor: pointer;
-            text-decoration: none;
+
+            transition: transform 0.15s ease;
+        }
+
+        .button:active {
+            transform: scale(0.97);
         }
 
         .upload {
-            background: #d8899b;
+            background: #b97878;
             color: white;
+
+            box-shadow: 0 8px 25px rgba(185, 120, 120, 0.25);
         }
 
         .gallery {
-            background: #f1f1f1;
-            color: #444;
+            background: rgba(255, 255, 255, 0.75);
+            color: #514641;
+
+            border: 1px solid rgba(120, 100, 90, 0.12);
         }
 
         .footer {
             margin-top: 30px;
             font-size: 13px;
-            color: #999;
+            color: #9a8e87;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.08);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @media (max-height: 650px) {
+            .heart {
+                font-size: 45px;
+                margin-bottom: 12px;
+            }
+
+            h1 {
+                font-size: 38px;
+            }
+
+            .subtitle {
+                margin-bottom: 25px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
+    <main class="page">
 
         <div class="heart">❤️</div>
 
@@ -91,22 +148,33 @@
 
         <p class="subtitle">
             Cieszymy się, że jesteście z nami!<br>
-            Podzielcie się swoimi zdjęciami z tego wyjątkowego dnia.
+            Podzielcie się z nami zdjęciami<br>
+            z tego wyjątkowego dnia.
         </p>
 
-        <button class="button upload" onclick="alert('Dodawanie zdjęć uruchomimy w kolejnym etapie 📸')">
-            📸 Dodaj zdjęcia
+        <button class="button upload" onclick="showMessage()">
+            📸&nbsp;&nbsp; DODAJ ZDJĘCIA
         </button>
 
-        <button class="button gallery" onclick="alert('Galeria będzie dostępna w kolejnym etapie 🖼️')">
-            🖼️ Zobacz galerię
+        <button class="button gallery" onclick="showGalleryMessage()">
+            🖼️&nbsp;&nbsp; ZOBACZ GALERIĘ
         </button>
 
         <div class="footer">
             Dziękujemy, że tworzycie z nami te wspomnienia ❤️
         </div>
 
-    </div>
+    </main>
+
+    <script>
+        function showMessage() {
+            alert("Dodawanie zdjęć podłączymy tutaj w kolejnym kroku 📸");
+        }
+
+        function showGalleryMessage() {
+            alert("Galeria będzie dostępna tutaj 🖼️");
+        }
+    </script>
 
 </body>
 </html>
