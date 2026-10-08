@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nasze Wesele ❤️</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #fff7f0, #fce4ec);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 45px 25px;
+            border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .heart {
+            font-size: 55px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 17px;
+            color: #777;
+            margin-bottom: 35px;
+            line-height: 1.5;
+        }
+
+        .button {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            margin-top: 15px;
+            border-radius: 14px;
+            border: none;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .upload {
+            background: #d8899b;
+            color: white;
+        }
+
+        .gallery {
+            background: #f1f1f1;
+            color: #444;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 13px;
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="heart">❤️</div>
+
+        <h1>Nasze Wesele</h1>
+
+        <p class="subtitle">
+            Cieszymy się, że jesteście z nami!<br>
+            Podzielcie się swoimi zdjęciami z tego wyjątkowego dnia.
+        </p>
+
+        <button class="button upload" onclick="alert('Dodawanie zdjęć uruchomimy w kolejnym etapie 📸')">
+            📸 Dodaj zdjęcia
+        </button>
+
+        <button class="button gallery" onclick="alert('Galeria będzie dostępna w kolejnym etapie 🖼️')">
+            🖼️ Zobacz galerię
+        </button>
+
+        <div class="footer">
+            Dziękujemy, że tworzycie z nami te wspomnienia ❤️
+        </div>
+
+    </div>
+
+</body>
+</html>
